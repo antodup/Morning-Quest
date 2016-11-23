@@ -1,0 +1,14 @@
+body{
+    background-color: aquamarine;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+canvas {
+    background: url(link/background.png);
+    background-position: 0, -1000px;
+    background-repeat: no-repeat;
+    height: 1000px;
+    width: 100%;
+}
