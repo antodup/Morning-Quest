@@ -26,7 +26,15 @@ body{
 	width: 1000px; 
 	height: 350px; 
 	position: relative;
-	-webkit-animation : home1 2s linear infinite;
+}
+
+.open1{
+	-webkit-animation : home1 2s 1.5s linear forwards;
+
+}
+
+.open2{
+	-webkit-animation : home2 2s 1.5s linear forwards;
 }
 
 #home2 {
@@ -35,10 +43,9 @@ body{
 	width: 1000px; 
 	height: 350px; 
 	position: relative;
-	-webkit-animation : home2 2s ease-out;
 }
 
-#registration {
+#start {
 	width: 400px;
 	height: 480px;
 
@@ -49,8 +56,8 @@ body{
 
 }
 
-.animate {
-	-webkit-animation : play1 1s linear infinite;
+.animate  {
+	-webkit-animation : play1 1s linear forwards;
 }
 
 #logo {
@@ -100,7 +107,8 @@ body{
 /*ANIMATE*/
 
 @-webkit-keyframes play1 {
-	0% {opacity: 1;}
+	0% {opacity: 1;
+		display: block;}
 	10%{opacity: 0.9;}
 	20%{opacity: 0.8;}
 	30%{opacity: 0.7;}
@@ -116,13 +124,22 @@ body{
 }
 
 @-webkit-keyframes home1 {
-	from{ top:0;}
+	from{ top: 0;
+		  display: block;}
+
 	to{ top: -400px;
-	display: none; }
+		display: none;}
 }
 
+
 @-webkit-keyframes home2 {
-	from{ top: : 0;}
-	to{ bottom: -400px;
-	display: none; }
+	from{
+		bottom: 0; 
+		display: inline-block;
+	}
+
+	to{
+		bottom: -400px;
+		display: none;
+	}
 }

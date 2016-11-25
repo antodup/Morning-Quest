@@ -1,7 +1,18 @@
-var play = getElementById('play');
-var registration = getElementById('registration');
+var play = document.getElementById('play'),
+	start = document.getElementById('start'),
+	home1 = document.getElementById('home1'),
+	home2 = document.getElementById('home2');
 
-var click = function () {
+function click() {  
+	var animate = document.getElementsByClassName('animate');
+	start.classList.add ('animate');
+
+	var open1 = document.getElementsByClassName('open1');
+	home1.classList.add('open1');
+
+	var open2 = document.getElementsByClassName('open2'); 
+	home2.classList.add('open2');
+}
 
 
-play.addEventListner("click", click);
+play.addEventListener('click',click) ;
