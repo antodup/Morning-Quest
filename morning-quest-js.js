@@ -14,5 +14,5 @@ function click() {
 	home2.classList.add('open2');
 }
 
-
 play.addEventListener('click',click) ;
+
