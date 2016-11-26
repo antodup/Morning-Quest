@@ -6,10 +6,42 @@ body{
 
 
 #house {
-    background: url(link/background.png);
+    background: url(link/background-v1.png);
     background-repeat: no-repeat;
     height: 700px;
     width: 1000px;
-    background-position: 0 -700px;
     display: inline-block;
+    position: relative;
+}
+
+
+#board {
+    width: 1000px;
+    height: 100px;
+    background-color: grey;
+    display: inline-block;
+}
+
+
+#navigoImg {
+    width: 20px;
+    position: absolute;
+    left: 140px;  
+    bottom: 50px;
+    -ms-transform: rotate(15deg); /* IE 9 */
+    -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
+    transform: rotate(15deg);
+}
+
+@-webkit-keyframes navigoappear {
+    0% { bottom: 50px; left: 140px;}
+    50% { bottom: 280px; left: 250px;}
+    100% { bottom: -100px; left: 50px;}
+    
+}
+
+.appear {
+    -webkit-animation: navigoappear 2s 1 ease-in;
+    -moz-animation: navigoappear 2s 1 ease-in;
+    animation: navigoappear 2s 1 ease-in;
 }
