@@ -7,6 +7,15 @@ body{
 
 /*HOME*/
 
+
+
+        /* TIMER */
+        
+#time {
+    z-index: 10;
+}
+
+
 #house {
     background: url(images/background-v1.png);
     background-repeat: no-repeat;
@@ -178,7 +187,7 @@ body{
 #cle {
     position: absolute;
     width: 20px;
-    right: 45px;
+    left: 800px;
     bottom: 10px; 
     z-index: 14;
 }
@@ -193,9 +202,10 @@ body{
 #mac {
     position: absolute;
     width: 100px;
-    right: 245px;
+    left: 650px;
     bottom: 120px; 
     z-index: 12;
+    display: inline-block;
 }
 
 .mac_appear {
@@ -206,7 +216,6 @@ body{
 
 #iphone {
 	width: 30px; 
-
 	position: absolute;
 	top: 500px;
 	left: 830px;
@@ -350,18 +359,22 @@ body{
 
 @-webkit-keyframes macappear {
     0% { bottom: 120px; right: 245px; width: 100px;}
+    
     50% { bottom: 50%; 
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
         width: 150px;}
+    
     75% { bottom: 50%; 
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 150px;}
+    
     85% { bottom: 50%; 
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 150px;}
+    
     100% { bottom: -100px; left: 350px; width: 100px;}
     
 }
@@ -398,6 +411,5 @@ body{
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 50px;}
-    100% { bottom: -100px; left: 150px; width: 50px;}
-    
+    100% { bottom: -100px; left: 150px; width: 50px;}    
 }
