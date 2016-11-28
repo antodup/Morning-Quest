@@ -131,29 +131,8 @@ body{
 #play:hover{
 	background-color: white;
 	color: #fdb714;
-}
-/* COUNTER */    
+}  
  
-/*OBJECT*/
-
-#cle {
-	width: 20px;
-	position: absolute; 
-
-}
-
-
-#navigoImg {
-    width: 20px;
-    position: absolute;
-    left: 140px;  
-    bottom: 50px;
-    -ms-transform: rotate(15deg); /* IE 9 */
-    -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
-    transform: rotate(15deg);
-}
-
-
 /*COUNT*/
 
 #counter{
@@ -179,6 +158,12 @@ body{
 /* OBJECTS */
 
 
+.navigo_appear {
+    -webkit-animation: navigoappear 2s 1 ease-in forwards;
+    -moz-animation: navigoappear 2s 1 ease-in forwards;
+    animation: navigoappear 2s 1 ease-in forwards;
+}
+
 #navigoImg {
     width: 20px;
     position: absolute;
@@ -198,6 +183,13 @@ body{
     z-index: 14;
 }
 
+.cle_appear {
+    -webkit-animation: cleappear 2s 1 ease-in forwards;
+    -moz-animation: cleappear 2s 1 ease-in forwards;
+    animation: cleappear 2s 1 ease-in forwards;
+}
+
+
 #mac {
     position: absolute;
     width: 100px;
@@ -206,76 +198,39 @@ body{
     z-index: 12;
 }
 
-@-webkit-keyframes navigoappear {
-    0% { bottom: 50px; left: 140px; width: 20px;}
-    50% { bottom: 50%; 
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        width: 50px;}
-    75% { bottom: 50%; 
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%); 
-        width: 50px;}
-    85% { bottom: 50%; 
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%); 
-        width: 50px;}
-    100% { bottom: -100px; left: 50px; width: 50px;}
-    
-}
-
-@-webkit-keyframes cleappear {
-    0% { bottom: 10px; right: 45px; width: 20px;}
-    50% { bottom: 50%; 
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        width: 50px;}
-    75% { bottom: 50%; 
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%); 
-        width: 50px;}
-    85% { bottom: 50%; 
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%); 
-        width: 50px;}
-    100% { bottom: -100px; left: 150px; width: 50px;}
-    
-}
-
-.cle_appear {
-    -webkit-animation: cleappear 2s 1 ease-in forwards;
-    -moz-animation: cleappear 2s 1 ease-in forwards;
-    animation: cleappear 2s 1 ease-in forwards;
-}
-
-.navigo_appear {
-    -webkit-animation: navigoappear 2s 1 ease-in forwards;
-    -moz-animation: navigoappear 2s 1 ease-in forwards;
-    animation: navigoappear 2s 1 ease-in forwards;
-}
-
-@-webkit-keyframes macappear {
-    0% { bottom: 120px; right: 245px; width: 100px;}
-    50% { bottom: 50%; 
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        width: 150px;}
-    75% { bottom: 50%; 
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%); 
-        width: 150px;}
-    85% { bottom: 50%; 
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%); 
-        width: 150px;}
-    100% { bottom: -100px; left: 350px; width: 100px;}
-    
-}
-
 .mac_appear {
     -webkit-animation: macappear 2s 1 ease-in forwards;
     -moz-animation: macappear 2s 1 ease-in forwards;
     animation: macappear 2s 1 ease-in forwards;
+}
+
+#iphone {
+	width: 30px; 
+
+	position: absolute;
+	top: 500px;
+	left: 830px;
+}
+
+.iphone_appear {
+    -webkit-animation: iphoneappear 2s 1 ease-in forwards;
+    -moz-animation: iphoneappear 2s 1 ease-in forwards;
+    animation: iphoneappear 2s 1 ease-in forwards;
+}
+
+#pastabox {
+	width: 50px; 
+
+	position: absolute;
+	top: 600px; 
+	left: 250px;
+
+}
+
+.pastabox_appear {
+    -webkit-animation: pastaboxappear 2s 1 ease-in forwards;
+    -moz-animation: pastaboxappear 2s 1 ease-in forwards;
+    animation: pastaboxappear 2s 1 ease-in forwards;
 }
 
 
@@ -352,4 +307,97 @@ body{
 	100% {
 		display: none;
         opacity: 1;}
+}
+
+
+        /* OBJECTS */
+
+@-webkit-keyframes iphoneappear {
+    0% { top: 500px; left: 830px; width: 30px;}
+
+    50% { top: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 50px;}
+
+    75% { top: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+
+    100% {top : 720px; 
+    	left: 250px; 
+    	width: 40px;}   
+}
+
+@-webkit-keyframes pastaboxappear {
+    0% { top: 600px; left: 250px; width: 50px;}
+
+    50% { top: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 80px;}
+
+    75% { top: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 80px;}
+
+    100% {top : 720px; 
+    	left: 500px; 
+    	width: 60px;}   
+}
+
+@-webkit-keyframes macappear {
+    0% { bottom: 120px; right: 245px; width: 100px;}
+    50% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 150px;}
+    75% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 150px;}
+    85% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 150px;}
+    100% { bottom: -100px; left: 350px; width: 100px;}
+    
+}
+
+@-webkit-keyframes navigoappear {
+    0% { bottom: 50px; left: 140px; width: 20px;}
+    50% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 50px;}
+    75% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+    85% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+    100% { bottom: -100px; left: 50px; width: 50px;}
+    
+}
+
+@-webkit-keyframes cleappear {
+    0% { bottom: 10px; right: 45px; width: 20px;}
+    50% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 50px;}
+    75% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+    85% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+    100% { bottom: -100px; left: 150px; width: 50px;}
+    
 }
