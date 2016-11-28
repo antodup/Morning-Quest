@@ -1,4 +1,3 @@
-
 var play = document.getElementById('play'),
 	start = document.getElementById('start'),
 	home1 = document.getElementById('home1'),
@@ -42,9 +41,7 @@ var click = function() {
 
             if (counter.innerHTML == 'GO !')
                 clearInterval(interval);
-
         }
-    
 }
 
 function numbers () {
