@@ -292,7 +292,7 @@ body{
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 50px;}
-    100% { bottom: -100px; left: 50px; width: 50px;}
+    100% { bottom: -100px; left: 100px; width: 50px;}
     
 }
 
