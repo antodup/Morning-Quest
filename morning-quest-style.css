@@ -57,7 +57,9 @@ body{
 }
 
 #figure {
-    margin-top: 330px;
+    margin-top: 645px;
+    display : none;
+    position: relative;
 }
 
 
@@ -158,9 +160,9 @@ body{
     position: absolute;
     left: 140px;  
     bottom: 50px;
-    -ms-transform: rotate(15deg); /* IE 9 */
-    -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
-    transform: rotate(15deg);
+    -ms-transform: rotate(156eg); /* IE 9 */
+    -webkit-transform: rotate(16deg); /* Chrome, Safari, Opera */
+    transform: rotate(16deg);
     z-index: 15;
 }
 
@@ -213,7 +215,7 @@ body{
 	width: 50px; 
 
 	position: absolute;
-	top: 250px; 
+	top: 520px; 
 	left: 250px;
 }
 
@@ -317,13 +319,11 @@ body{
         transform: translateX(-50%) translateY(-50%); 
         width: 50px;}
 
-    100% {top : 720px; 
-    	left: 250px; 
-    	width: 40px;}   
+    100% {top: 647px; left: 469px; width: 28px;}   
 }
 
 @-webkit-keyframes pastaboxappear {
-    0% { top: 550px; left: 250px; width: 50px;}
+    0% { top: 520px; left: 250px; width: 50px;}
 
     50% { top: 50%; 
         left: 50%;
@@ -335,9 +335,9 @@ body{
         transform: translateX(-50%) translateY(-50%); 
         width: 80px;}
 
-    100% {top : 720px; 
-    	left: 500px; 
-    	width: 60px;}   
+    100% {top : 645px; 
+    	left: 636px; 
+    	width: 50px;}   
 }
 
 @-webkit-keyframes macappear {
@@ -354,7 +354,7 @@ body{
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 150px;}
-    100% { bottom: -100px; left: 350px; width: 100px;}
+    100% {  bottom: -65px; left: 520px; width: 89px;}
     
 }
 
@@ -372,7 +372,7 @@ body{
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 50px;}
-    100% { bottom: -100px; left: 50px; width: 50px;}
+    100% { bottom: -59px; left: 319px; width: 30px;}
     
 }
 
@@ -390,6 +390,6 @@ body{
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 50px;}
-    100% { bottom: -100px; left: 150px; width: 50px;}
+    100% { bottom: -65px; left: 381px; width: 60px;}
     
 }

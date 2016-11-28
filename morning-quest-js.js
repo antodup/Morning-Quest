@@ -36,7 +36,7 @@ var click = function() {
             var startcounter = document.getElementsByClassName('counter'); 
             counter.classList.add('counter');
 
-            document.getElementById("figure").style.display = "none";
+            document.getElementById("figure").style.display = "inline-block";
 
             var interval = setInterval(numbers, 1750);
 
