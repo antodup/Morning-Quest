@@ -3,7 +3,8 @@ var play = document.getElementById('play'),
 	start = document.getElementById('start'),
 	home1 = document.getElementById('home1'),
 	home2 = document.getElementById('home2'),
-	input = document.getElementById('name');
+	input = document.getElementById('name'),
+    navigo = document.getElementById('navigoImg');
 
 var click = function() {  
 
@@ -23,5 +24,12 @@ var click = function() {
 	}
 }
 
-play.addEventListener('click',click) ;
 
+function get_object(){
+    var navigoanimate = document.getElementsByClassName('appear');
+    navigo.classList.add('appear');
+}
+
+navigo.addEventListener("click", get_object);
+
+play.addEventListener('click',click) ;

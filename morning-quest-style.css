@@ -36,16 +36,27 @@ body{
 }
 
 @-webkit-keyframes navigoappear {
-    0% { bottom: 50px; left: 140px;}
-    50% { bottom: 280px; left: 250px;}
-    100% { bottom: -100px; left: 50px;}
+    0% { bottom: 50px; left: 140px; width: 20px;}
+    50% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 50px;}
+    75% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+    85% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+    100% { bottom: -100px; left: 50px; width: 50px;}
     
 }
 
 .appear {
-    -webkit-animation: navigoappear 2s 1 ease-in;
-    -moz-animation: navigoappear 2s 1 ease-in;
-    animation: navigoappear 2s 1 ease-in;
+    -webkit-animation: navigoappear 2s 1 ease-in forwards;
+    -moz-animation: navigoappear 2s 1 ease-in forwards;
+    animation: navigoappear 2s 1 ease-in forwards;
 }
 
 #home1 {
