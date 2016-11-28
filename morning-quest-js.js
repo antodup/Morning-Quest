@@ -1,4 +1,3 @@
-
 var play = document.getElementById('play'),
 	start = document.getElementById('start'),
 	home1 = document.getElementById('home1'),
@@ -64,11 +63,11 @@ var click = function() {
             var startcounter = document.getElementsByClassName('counter'); 
             counter.classList.add('counter');
 
-            document.getElementById("figure").style.display = "none";
-
+            document.getElementById("figure").style.display = "inline-block";
+            
             interval = setInterval(numbers, 1750);                
+
         }
-    
 }
 
 function numbers () {
