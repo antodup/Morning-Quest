@@ -7,8 +7,10 @@ var play = document.getElementById('play'),
 
     counter = document.getElementById('counter'),
     go = 3,
-
-    navigo = document.getElementById('navigoImg'), 
+    
+    navigo = document.getElementById('navigoImg'),
+    cle = document.getElementById('cle'),
+    mac = document.getElementById('mac'), 
     iphone = document.getElementById('iphone'),
     pastabox = document.getElementById('pastabox');
 
@@ -61,11 +63,28 @@ play.addEventListener('click',click) ;
 
 
 function get_navigo(){
-    var navigoanimate = document.getElementsByClassName('appear');
-    navigo.classList.add('appear');
+    var navigoanimate = document.getElementsByClassName('navigo_appear');
+    navigo.classList.add('navigo_appear');
 }
 
 navigo.addEventListener("click", get_navigo);
+
+
+function get_cle(){
+    var cleanimate = document.getElementsByClassName('cle_appear');
+    cle.classList.add('cle_appear');
+}
+
+cle.addEventListener("click", get_cle);
+
+
+function get_mac(){
+    var macanimate = document.getElementsByClassName('mac_appear');
+    mac.classList.add('mac_appear');
+}
+
+mac.addEventListener("click", get_mac);
+
 
 function get_iphone(){
     var iphoneanimate = document.getElementsByClassName('iphone_appear');
