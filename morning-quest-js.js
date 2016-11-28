@@ -8,7 +8,9 @@ var play = document.getElementById('play'),
     counter = document.getElementById('counter'),
     go = 3,
 
-    navigo = document.getElementById('navigoImg');
+    navigo = document.getElementById('navigoImg'), 
+    iphone = document.getElementById('iphone'),
+    pastabox = document.getElementById('pastabox');
 
     
 
@@ -58,9 +60,23 @@ function numbers () {
 play.addEventListener('click',click) ;
 
 
-function get_object(){
+function get_navigo(){
     var navigoanimate = document.getElementsByClassName('appear');
     navigo.classList.add('appear');
 }
 
-navigo.addEventListener("click", get_object);
+navigo.addEventListener("click", get_navigo);
+
+function get_iphone(){
+    var iphoneanimate = document.getElementsByClassName('iphone_appear');
+    iphone.classList.add('iphone_appear');
+}
+
+iphone.addEventListener("click", get_iphone);
+
+function get_pastabox(){
+    var pastaboxanimate = document.getElementsByClassName('pastabox_appear');
+    pastabox.classList.add('pastabox_appear');
+}
+
+pastabox.addEventListener("click", get_pastabox);

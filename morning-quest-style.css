@@ -50,10 +50,18 @@ body{
 
 #home1 {
 	background-color: #292929; 
-
 	width: 1000px; 
 	height: 350px; 
 	position: relative;
+    z-index: 40;
+}
+
+#home2 {
+	background-color: #292929;
+	width: 1000px; 
+	height: 350px; 
+	position: absolute;
+    z-index: 39;
 }
 
 .open1{
@@ -65,24 +73,16 @@ body{
 	-webkit-animation : home2 2s 1.5s linear forwards;
 }
 
-#home2 {
-	background-color: #292929; 
-
-	width: 1000px; 
-	height: 350px; 
-	position: absolute;
-}
-
 #start {
 	width: 400px;
 	height: 480px;
-
 	top: 50%;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
 	position: absolute;
-
+    z-index: 41;
 }
+
 
 .animate  {
 	-webkit-animation : play1 1s linear forwards;
@@ -131,28 +131,8 @@ body{
 #play:hover{
 	background-color: white;
 	color: #fdb714;
-}
-
-/*OBJECT*/
-
-#cle {
-	width: 20px;
-	position: absolute; 
-
-}
-
-
-#navigoImg {
-    width: 20px;
-    position: absolute;
-    left: 140px;  
-    bottom: 50px;
-    -ms-transform: rotate(15deg); /* IE 9 */
-    -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
-    transform: rotate(15deg);
-}
-
-
+}  
+ 
 /*COUNT*/
 
 #counter{
@@ -171,9 +151,58 @@ body{
 }
 
 .counter {
-    -webkit-animation : counter 2s 3s linear forwards;
+    -webkit-animation : counter 6s 3s linear;
 }
 
+
+/* OBJECTS */
+
+
+#navigoImg {
+    width: 20px;
+    position: absolute;
+    left: 140px;  
+    bottom: 50px;
+    -ms-transform: rotate(15deg); /* IE 9 */
+    -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
+    transform: rotate(15deg);
+    z-index: 15;
+}
+
+.appear {
+    -webkit-animation: navigoappear 2s 1 ease-in forwards;
+    -moz-animation: navigoappear 2s 1 ease-in forwards;
+    animation: navigoappear 2s 1 ease-in forwards;
+}
+
+#iphone {
+	width: 30px; 
+
+	position: absolute;
+	top: 500px;
+	left: 830px;
+}
+
+.iphone_appear {
+    -webkit-animation: iphoneappear 2s 1 ease-in forwards;
+    -moz-animation: iphoneappear 2s 1 ease-in forwards;
+    animation: iphoneappear 2s 1 ease-in forwards;
+}
+
+#pastabox {
+	width: 50px; 
+
+	position: absolute;
+	top: 600px; 
+	left: 250px;
+
+}
+
+.pastabox_appear {
+    -webkit-animation: pastaboxappear 2s 1 ease-in forwards;
+    -moz-animation: pastaboxappear 2s 1 ease-in forwards;
+    animation: pastaboxappear 2s 1 ease-in forwards;
+}
 /*ANIMATE*/
 
 @-webkit-keyframes play1 {
@@ -206,7 +235,6 @@ body{
 	90%{height: 15px;}
 	100% {height: 0px}
 }
-
 
 @-webkit-keyframes home2 {
 	0% {height: 350px;
@@ -249,3 +277,58 @@ body{
 		display: none;
         opacity: 1;}
 }
+
+@-webkit-keyframes navigoappear {
+	0% { bottom: 50px; left: 140px; width: 20px;}
+    50% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 50px;}
+    75% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+    85% { bottom: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+    100% { bottom: -100px; left: 50px; width: 50px;}
+    
+}
+
+@-webkit-keyframes iphoneappear {
+    0% { top: 500px; left: 830px; width: 30px;}
+
+    50% { top: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 50px;}
+
+    75% { top: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 50px;}
+
+    100% {top : 720px; 
+    	left: 250px; 
+    	width: 40px;}   
+}
+
+@-webkit-keyframes pastaboxappear {
+    0% { top: 600px; left: 250px; width: 50px;}
+
+    50% { top: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 80px;}
+
+    75% { top: 50%; 
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); 
+        width: 80px;}
+
+    100% {top : 720px; 
+    	left: 500px; 
+    	width: 60px;}   
+}
+
