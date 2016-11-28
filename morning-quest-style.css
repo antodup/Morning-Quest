@@ -24,17 +24,6 @@ body{
     display: inline-block;
 }
 
-
-#navigoImg {
-    width: 20px;
-    position: absolute;
-    left: 140px;  
-    bottom: 50px;
-    -ms-transform: rotate(15deg); /* IE 9 */
-    -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
-    transform: rotate(15deg);
-}
-
 @-webkit-keyframes navigoappear {
     0% { bottom: 50px; left: 140px; width: 20px;}
     50% { bottom: 50%; 
@@ -143,6 +132,28 @@ body{
 	background-color: white;
 	color: #fdb714;
 }
+
+/*OBJECT*/
+
+#cle {
+	width: 20px;
+	position: absolute; 
+
+}
+
+
+#navigoImg {
+    width: 20px;
+    position: absolute;
+    left: 140px;  
+    bottom: 50px;
+    -ms-transform: rotate(15deg); /* IE 9 */
+    -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
+    transform: rotate(15deg);
+}
+
+
+/*COUNT*/
 
 #counter{
     font-family: sans-serif; 
