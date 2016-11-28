@@ -33,10 +33,10 @@ var click = function() {
             var open2 = document.getElementsByClassName('open2'); 
             home2.classList.add('open2');
 
-
             var startcounter = document.getElementsByClassName('counter'); 
             counter.classList.add('counter');
 
+            document.getElementById("figure").style.display = "none";
 
             var interval = setInterval(numbers, 1750);
 

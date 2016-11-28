@@ -10,7 +10,8 @@ body{
 #house {
     background: url(images/background-v1.png);
     background-repeat: no-repeat;
-    height: 700px;
+
+    height: 640px;
     width: 1000px;
     display: inline-block;
     position: relative;
@@ -33,7 +34,7 @@ body{
 #home1 {
 	background-color: #292929; 
 	width: 1000px; 
-	height: 350px; 
+	height: 320px; 
 	position: relative;
     z-index: 40;
 }
@@ -41,7 +42,7 @@ body{
 #home2 {
 	background-color: #292929;
 	width: 1000px; 
-	height: 350px; 
+	height: 320px; 
 	position: absolute;
     z-index: 39;
 }
@@ -54,6 +55,11 @@ body{
 .open2{
 	-webkit-animation : home2 2s 1.5s linear forwards;
 }
+
+#figure {
+    margin-top: 330px;
+}
+
 
 #start {
 	width: 400px;
@@ -115,6 +121,7 @@ body{
 	color: #fdb714;
 }  
  
+
 /*COUNT*/
 
 #counter{
@@ -206,9 +213,8 @@ body{
 	width: 50px; 
 
 	position: absolute;
-	top: 600px; 
+	top: 250px; 
 	left: 250px;
-
 }
 
 .pastabox_appear {
@@ -317,7 +323,7 @@ body{
 }
 
 @-webkit-keyframes pastaboxappear {
-    0% { top: 600px; left: 250px; width: 50px;}
+    0% { top: 550px; left: 250px; width: 50px;}
 
     50% { top: 50%; 
         left: 50%;
