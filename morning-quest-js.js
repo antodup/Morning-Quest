@@ -4,9 +4,12 @@ var play = document.getElementById('play'),
 	home1 = document.getElementById('home1'),
 	home2 = document.getElementById('home2'),
 	input = document.getElementById('name'),
-    navigo = document.getElementById('navigoImg'),
+	
     counter = document.getElementById('counter'),
-    go = 3;
+    go = 3,
+
+    navigo = document.getElementById('navigoImg');
+
     
 
 
