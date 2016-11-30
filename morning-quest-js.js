@@ -13,36 +13,11 @@ var play = document.getElementById('play'),
     mac = document.getElementById('mac'), 
     iphone = document.getElementById('iphone'),
     pastabox = document.getElementById('pastabox'),
-    goal = 0;
+    goal = 0, 
+    
+    countdown = document.getElementById('countdown');
 
     
-function countdown( elementName, minutes, seconds )
-{
-    var element, endTime, hours, mins, msLeft, time;
-
-    function twoDigits( n )
-    {
-        return (n <= 9 ? "0" + n : n);
-    }
-
-    function updateTimer()
-    {
-        msLeft = endTime - (+new Date);
-        if ( msLeft < 1000 ) {
-            element.innerHTML = "PERDU !";
-        } else {
-            time = new Date( msLeft );
-            hours = time.getUTCHours();
-            mins = time.getUTCMinutes();
-            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
-            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
-        }
-    }
-
-    element = document.getElementById( elementName );
-    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
-    updateTimer();
-}
 
 
 var click = function() {  
@@ -80,15 +55,28 @@ function numbers () {
     } else {
         counter.innerHTML = 'GO !'; 
         clearInterval(interval);
-        countdown( "countdown", 5, 0 );
     }     
 }
 
 play.addEventListener('click',click) ;
 
-function stopCount() { 
-    clearInterval(countdown); 
-} 
+countdown.innerHTML = count;
+interval = setInterval(count, 1000); 
+
+function count () {
+  _sec = 59;
+  _min = 4;
+  
+  if (_sec ==0)
+  {
+      _sec = 59; 
+      --_min; 
+  }else {
+      --_sec;
+      countdown.innerHTML = _min + ":" + _sec;
+  }
+}
+
 
 
 // OBJECTS
@@ -143,11 +131,12 @@ pastabox.addEventListener("click", get_pastabox);
 
 function check () {
     if (goal==5){
-    alert ('Bravo tu as Gagné !!');
-    stopCount();
-    
+    alert ('Bravo tu as Gagné !')
     } 
 }
+
+
+
 // TIMER
 
-
+    
