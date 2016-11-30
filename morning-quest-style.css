@@ -5,7 +5,21 @@ body{
     font-family: sans-serif;
 }
 
+@font-face {
+    font-family: 'DIGITAL';
+    src: url('FONT/DS-DIGIT.TTF');
+}
+
 /*HOME*/
+
+
+
+        /* TIMER */
+        
+#time {
+    z-index: 10;
+}
+
 
 #house {
     background: url(images/background-v1.png);
@@ -122,7 +136,16 @@ body{
 	background-color: white;
 	color: #fdb714;
 }  
- 
+
+#countdown {
+    font-family: DIGITAL;
+    font-size: 50px;
+    
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 0;
+}
 
 /*COUNT*/
 
@@ -187,7 +210,6 @@ body{
     left: 650px;
     bottom: 120px; 
     z-index: 12;
-
     display: inline-block;
 }
 
@@ -199,7 +221,6 @@ body{
 
 #iphone {
 	width: 30px; 
-
 	position: absolute;
 	top: 500px;
 	left: 830px;
@@ -224,6 +245,7 @@ body{
     -moz-animation: pastaboxappear 2s 1 ease-in forwards;
     animation: pastaboxappear 2s 1 ease-in forwards;
 }
+
 
 
 /*ANIMATE*/
@@ -342,18 +364,22 @@ body{
 
 @-webkit-keyframes macappear {
     0% { bottom: 120px; right: 245px; width: 100px;}
+    
     50% { bottom: 50%; 
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
         width: 150px;}
+    
     75% { bottom: 50%; 
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 150px;}
+    
     85% { bottom: 50%; 
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 150px;}
+
     100% {  bottom: -65px; left: 520px; width: 89px;}
     
 }
@@ -390,6 +416,6 @@ body{
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 50px;}
-    100% { bottom: -65px; left: 381px; width: 60px;}
-    
+
+    100% { bottom: -65px; left: 381px; width: 60px;}    
 }

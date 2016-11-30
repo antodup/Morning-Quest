@@ -3,6 +3,7 @@ var play = document.getElementById('play'),
 	home1 = document.getElementById('home1'),
 	home2 = document.getElementById('home2'),
 	input = document.getElementById('name'),
+    interval,
 
     counter = document.getElementById('counter'),
     go = 3,
@@ -11,9 +12,37 @@ var play = document.getElementById('play'),
     cle = document.getElementById('cle'),
     mac = document.getElementById('mac'), 
     iphone = document.getElementById('iphone'),
-    pastabox = document.getElementById('pastabox');
+    pastabox = document.getElementById('pastabox'),
+    goal = 0;
 
     
+function countdown( elementName, minutes, seconds )
+{
+    var element, endTime, hours, mins, msLeft, time;
+
+    function twoDigits( n )
+    {
+        return (n <= 9 ? "0" + n : n);
+    }
+
+    function updateTimer()
+    {
+        msLeft = endTime - (+new Date);
+        if ( msLeft < 1000 ) {
+            element.innerHTML = "PERDU !";
+        } else {
+            time = new Date( msLeft );
+            hours = time.getUTCHours();
+            mins = time.getUTCMinutes();
+            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+        }
+    }
+
+    element = document.getElementById( elementName );
+    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+    updateTimer();
+}
 
 
 var click = function() {  
@@ -37,10 +66,7 @@ var click = function() {
 
             document.getElementById("figure").style.display = "inline-block";
 
-            var interval = setInterval(numbers, 1750);
-
-            if (counter.innerHTML == 'GO !')
-                clearInterval(interval);
+            interval = setInterval(numbers, 1750);                
         }
 }
 
@@ -53,15 +79,25 @@ function numbers () {
         console.log(go);
     } else {
         counter.innerHTML = 'GO !'; 
+        clearInterval(interval);
+        countdown( "countdown", 5, 0 );
     }     
 }
 
 play.addEventListener('click',click) ;
 
+function stopCount() { 
+    clearInterval(countdown); 
+} 
+
+
+// OBJECTS
 
 function get_navigo(){
     var navigoanimate = document.getElementsByClassName('navigo_appear');
     navigo.classList.add('navigo_appear');
+    goal++;
+    check();
 }
 
 navigo.addEventListener("click", get_navigo);
@@ -70,6 +106,8 @@ navigo.addEventListener("click", get_navigo);
 function get_cle(){
     var cleanimate = document.getElementsByClassName('cle_appear');
     cle.classList.add('cle_appear');
+    goal++;
+    check();
 }
 
 cle.addEventListener("click", get_cle);
@@ -78,6 +116,8 @@ cle.addEventListener("click", get_cle);
 function get_mac(){
     var macanimate = document.getElementsByClassName('mac_appear');
     mac.classList.add('mac_appear');
+    goal++;
+    check();
 }
 
 mac.addEventListener("click", get_mac);
@@ -86,6 +126,8 @@ mac.addEventListener("click", get_mac);
 function get_iphone(){
     var iphoneanimate = document.getElementsByClassName('iphone_appear');
     iphone.classList.add('iphone_appear');
+    goal++;
+    check();
 }
 
 iphone.addEventListener("click", get_iphone);
@@ -93,6 +135,19 @@ iphone.addEventListener("click", get_iphone);
 function get_pastabox(){
     var pastaboxanimate = document.getElementsByClassName('pastabox_appear');
     pastabox.classList.add('pastabox_appear');
+    goal++;
+    check();
 }
 
 pastabox.addEventListener("click", get_pastabox);
+
+function check () {
+    if (goal==5){
+    alert ('Bravo tu as Gagné !!');
+    stopCount();
+    
+    } 
+}
+// TIMER
+
+
