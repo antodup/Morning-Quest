@@ -17,10 +17,11 @@ var play = document.getElementById('play'),
     
     countdown = document.getElementById('countdown'),
     _sec = 60,
-    _min = 4;
-
-    
-
+    _min = 0,
+    sound, 
+    sound_loose,
+    sound_win, 
+    ;
 
 var click = function() {  
 
@@ -64,6 +65,10 @@ function numbers () {
         countdown.innerHTML = "5:00";
         decrease = setInterval(count, 1000);
         
+        sound = document.createElement('audio');
+        sound.setAttribute('src', 'SOUND/Mission-Impossible.mp3');
+        sound.setAttribute('autoplay', ''); 
+        sound.setAttribute('loop', '');
         
         function count () {
             
@@ -82,11 +87,25 @@ function numbers () {
           }
             
           if (_min == 0 && _sec == 0){
-            alert('PERDU !');
+            var img_loose = document.createElement('img');
+            img_loose.setAttribute('id', 'loose');
+            img_loose.setAttribute('src', 'images/loose.png');
+              
+            img_loose.setAttribute('class', 'loose-anim'); 
+            img_loose.classList.add('loose-anim');
+              
+            var destination_loose = document.getElementById('house');
+            destination_loose.appendChild(img_loose);
+            
+            sound.volume=0;
+            sound_loose = document.createElement('audio'); 
+            sound_loose.setAttribute('src', 'SOUND/Sad-Trombone.mp3'); 
+            sound_loose.setAttribute('autoplay', '')
+              
             clearInterval(decrease);
           }  
-    }     
-}
+        }
+    }
 }
 
 play.addEventListener('click',click) ;
@@ -103,7 +122,6 @@ function get_navigo(){
 
 navigo.addEventListener("click", get_navigo);
 
-
 function get_cle(){
     var cleanimate = document.getElementsByClassName('cle_appear');
     cle.classList.add('cle_appear');
@@ -113,7 +131,6 @@ function get_cle(){
 
 cle.addEventListener("click", get_cle);
 
-
 function get_mac(){
     var macanimate = document.getElementsByClassName('mac_appear');
     mac.classList.add('mac_appear');
@@ -122,7 +139,6 @@ function get_mac(){
 }
 
 mac.addEventListener("click", get_mac);
-
 
 function get_iphone(){
     var iphoneanimate = document.getElementsByClassName('iphone_appear');
@@ -144,11 +160,23 @@ pastabox.addEventListener("click", get_pastabox);
 
 function check () {
     if (goal==5){
-        alert ('Bravo tu as Gagné !');
+        var img_win = document.createElement('img');
+        img_win.setAttribute('id', 'win');
+        img_win.setAttribute('src', 'images/youwin.png');
+        
+        img_win.setAttribute('class', 'win-anim');
+        img_win.classList.add('win-anim');
+              
+        var destination_win = document.getElementById('house');
+        destination_win.appendChild(img_win);
+        
         clearInterval(decrease);
+        
+        sound.volume=0;
+        sound_win = document.createElement('audio'); 
+        sound_win.setAttribute('src', 'SOUND/Applaudissement.mp3'); 
+        sound_win.setAttribute('autoplay', '')
     } 
 }
-
-// TIMER
 
     
