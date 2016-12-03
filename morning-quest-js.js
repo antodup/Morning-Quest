@@ -15,7 +15,9 @@ var play = document.getElementById('play'),
     pastabox = document.getElementById('pastabox'),
     goal = 0, 
     
-    countdown = document.getElementById('countdown');
+    countdown = document.getElementById('countdown'),
+    _sec = 60,
+    _min = 4;
 
     
 
@@ -41,9 +43,11 @@ var click = function() {
 
             document.getElementById("figure").style.display = "inline-block";
 
-            interval = setInterval(numbers, 1750);                
+            interval = setInterval(numbers, 1750);       
+            
         }
 }
+
 
 function numbers () {
     
@@ -53,30 +57,39 @@ function numbers () {
         go--;
         console.log(go);
     } else {
+        
         counter.innerHTML = 'GO !'; 
-        clearInterval(interval);
+        clearInterval(interval); 
+
+        countdown.innerHTML = "5:00";
+        decrease = setInterval(count, 1000);
+        
+        
+        function count () {
+            
+          if (_sec == 0) {
+              _sec = 60; 
+              -- _min; 
+              countdown.innerhtml = _min + ":" + _sec;
+              
+          } else {
+              -- _sec;
+              countdown.innerHTML = _min + ":" + _sec;
+          }
+            
+          if (_sec < 10){
+                countdown.innerHTML = _min + ":0" +_sec;
+          }
+            
+          if (_min == 0 && _sec == 0){
+            alert('PERDU !');
+            clearInterval(decrease);
+          }  
     }     
+}
 }
 
 play.addEventListener('click',click) ;
-
-countdown.innerHTML = count;
-interval = setInterval(count, 1000); 
-
-function count () {
-  _sec = 59;
-  _min = 4;
-  
-  if (_sec ==0)
-  {
-      _sec = 59; 
-      --_min; 
-  }else {
-      --_sec;
-      countdown.innerHTML = _min + ":" + _sec;
-  }
-}
-
 
 
 // OBJECTS
@@ -131,11 +144,10 @@ pastabox.addEventListener("click", get_pastabox);
 
 function check () {
     if (goal==5){
-    alert ('Bravo tu as Gagné !')
+        alert ('Bravo tu as Gagné !');
+        clearInterval(decrease);
     } 
 }
-
-
 
 // TIMER
 
