@@ -5,6 +5,11 @@ body{
     font-family: sans-serif;
 }
 
+@font-face {
+    font-family: 'DIGITAL';
+    src: url('FONT/DS-DIGIT.TTF');
+}
+
 /*HOME*/
 
 
@@ -74,7 +79,7 @@ body{
 
 #start {
 	width: 400px;
-	height: 480px;
+	height: 535px;
 	top: 50%;
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
@@ -106,32 +111,52 @@ body{
 
 	margin-top: 20px;
 	line-height: 25px;
+    font-size: 18px;
 }
 
 #good-luck {
-	font-size: 20px; 
+	font-size: 25px; 
 	font-weight: bold;
+    line-height: 2;
 }
 
 #play {
-	font-size: 25px;
-	font-weight: bold;
-	color: white;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    
+    padding: 15px;
+    width: 50%;
 
-	padding: 15px;
-	width: 50%;
-	margin-top: 30px;
+    border-radius: 5px;
+    border: solid 2px white;
+    background: none;
 
-	border-radius: 5px;
-	border: solid 2px white;
-	background: none;
+    position: absolute;
+    margin: 30px auto;
+    left: 50%;
+    transform: translateX(-50%)
 }
 
 #play:hover{
 	background-color: white;
 	color: #fdb714;
 }  
- 
+
+#countdown {
+    font-family: DIGITAL;
+    font-size: 50px;
+    
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 0;
+}
+
+#choice{
+    margin-top: 20px;
+    color: white;
+}
 
 /*COUNT*/
 
@@ -153,6 +178,7 @@ body{
 .counter {
     -webkit-animation : counter 6s 3s linear;
 }
+
 
 
 /* OBJECTS */
@@ -233,6 +259,36 @@ body{
 }
 
 
+#loose {
+    width: 450px;
+    position: absolute;
+    top: 30%;
+    left: 30%;  
+    z-index: 15;
+}
+
+.loose-anim {
+       
+    -webkit-animation: loose 0.5s 1 linear forwards;
+    -moz-animation: loose 0.5s 1 linear forwards;
+    animation: loose 0.5s 1 linear forwards; 
+}
+
+#win{
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%)
+}
+
+.win-anim{
+    -webkit-animation: win 0.5s 1 linear forwards;
+    -moz-animation: win 0.5s 1 linear forwards;
+    animation: win 0.5s 1 linear forwards;
+}
+
+
 /*ANIMATE*/
 
 @-webkit-keyframes play1 {
@@ -309,9 +365,7 @@ body{
 }
 
 
-
         /* OBJECTS */
-
 
 @-webkit-keyframes iphoneappear {
     0% { top: 500px; left: 830px; width: 30px;}
@@ -401,5 +455,15 @@ body{
         left: 50%;
         transform: translateX(-50%) translateY(-50%); 
         width: 50px;}
-    100% { bottom: -65px; left: 381px; width: 60px;}
+    100% { bottom: -65px; left: 381px; width: 60px;}    
+}
+
+@-webkit-keyframes win {
+	from {width: 200px;}
+	to{width: 450px;}
+}
+
+@-webkit-keyframes loose {
+	from {transform: rotateY(180deg);}
+	to{transform: rotateY(0deg);}
 }

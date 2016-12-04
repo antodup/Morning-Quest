@@ -9,6 +9,7 @@
     
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" type="text/css" href="morning-quest-style.css">
+    <title>Morning Quest</title>
     
 </head>
 
@@ -35,8 +36,21 @@
             <input type="text" name="name" id="name" placeholder="Ton nom" required>
               
             <p id="presentation">Après une soirée bien arrosée, ton appart est en bordel. Tu te reveilles en retard ! Tu as 5 minutes pour trouver toutes tes affaires et partir ! <br><span id="good-luck">Bon courage !</span> </p>
+            
+            <form id="choice">
+                
+                <label class="Difficult">Difficile</label>
+                <input type="radio" id="1min" name="time" value="hard">
+                
+                <label class="Difficult">Moyen</label>
+                <input type="radio" id="2min50" name="time" value="soso">
+                
+                <label class="Difficult">Facile</label>
+                <input type="radio" id="5min" name="time" value="5min" easy>
+                
+            </form>
 
-              <button id="play">PLAY</button>
+              <button id="play">PLAY</button> 
           </div>
           
           <!--OBJECT-->

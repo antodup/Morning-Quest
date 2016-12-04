@@ -12,37 +12,15 @@ var play = document.getElementById('play'),
     cle = document.getElementById('cle'),
     mac = document.getElementById('mac'), 
     iphone = document.getElementById('iphone'),
-    pastabox = document.getElementById('pastabox');
-
+    pastabox = document.getElementById('pastabox'),
+    goal = 0, 
     
-function countdown( elementName, minutes, seconds )
-{
-    var element, endTime, hours, mins, msLeft, time;
-
-    function twoDigits( n )
-    {
-        return (n <= 9 ? "0" + n : n);
-    }
-
-    function updateTimer()
-    {
-        msLeft = endTime - (+new Date);
-        if ( msLeft < 1000 ) {
-            element.innerHTML = "countdown's over!";
-        } else {
-            time = new Date( msLeft );
-            hours = time.getUTCHours();
-            mins = time.getUTCMinutes();
-            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
-            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
-        }
-    }
-
-    element = document.getElementById( elementName );
-    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
-    updateTimer();
-}
-
+    countdown = document.getElementById('countdown'),
+    _sec = 60,
+    _min = 0,
+    sound, 
+    sound_loose,
+    sound_win;
 
 var click = function() {  
 
@@ -64,11 +42,10 @@ var click = function() {
             counter.classList.add('counter');
 
             document.getElementById("figure").style.display = "inline-block";
-            
-            interval = setInterval(numbers, 1750);                
-
+            interval = setInterval(numbers, 1750);  
         }
 }
+
 
 function numbers () {
     
@@ -78,15 +55,57 @@ function numbers () {
         go--;
         console.log(go);
     } else {
+        
         counter.innerHTML = 'GO !'; 
-        clearInterval(interval);
-        countdown( "countdown", 5, 0 );
-    }     
+        clearInterval(interval); 
+
+        countdown.innerHTML = "5:00";
+        decrease = setInterval(count, 1000);
+        
+        sound = document.createElement('audio');
+        sound.setAttribute('src', 'SOUND/Mission-Impossible.mp3');
+        sound.setAttribute('autoplay', ''); 
+        sound.setAttribute('loop', '');
+        
+        function count () {
+            
+          if (_sec == 0) {
+              _sec = 60; 
+              -- _min; 
+              countdown.innerhtml = _min + ":" + _sec;
+              
+          } else {
+              -- _sec;
+              countdown.innerHTML = _min + ":" + _sec;
+          }
+            
+          if (_sec < 10){
+                countdown.innerHTML = _min + ":0" +_sec;
+          }
+            
+          if (_min == 0 && _sec == 0){
+            var img_loose = document.createElement('img');
+            img_loose.setAttribute('id', 'loose');
+            img_loose.setAttribute('src', 'images/loose.png');
+              
+            img_loose.setAttribute('class', 'loose-anim'); 
+            img_loose.classList.add('loose-anim');
+              
+            var destination_loose = document.getElementById('house');
+            destination_loose.appendChild(img_loose);
+            
+            sound.volume=0;
+            sound_loose = document.createElement('audio'); 
+            sound_loose.setAttribute('src', 'SOUND/Sad-Trombone.mp3'); 
+            sound_loose.setAttribute('autoplay', '')
+              
+            clearInterval(decrease);
+          }  
+        }
+    }
 }
 
 play.addEventListener('click',click) ;
-
-
 
 
 // OBJECTS
@@ -94,30 +113,35 @@ play.addEventListener('click',click) ;
 function get_navigo(){
     var navigoanimate = document.getElementsByClassName('navigo_appear');
     navigo.classList.add('navigo_appear');
+    goal++;
+    check();
 }
 
 navigo.addEventListener("click", get_navigo);
 
-
 function get_cle(){
     var cleanimate = document.getElementsByClassName('cle_appear');
     cle.classList.add('cle_appear');
+    goal++;
+    check();
 }
 
 cle.addEventListener("click", get_cle);
 
-
 function get_mac(){
     var macanimate = document.getElementsByClassName('mac_appear');
     mac.classList.add('mac_appear');
+    goal++;
+    check();
 }
 
 mac.addEventListener("click", get_mac);
 
-
 function get_iphone(){
     var iphoneanimate = document.getElementsByClassName('iphone_appear');
     iphone.classList.add('iphone_appear');
+    goal++;
+    check();
 }
 
 iphone.addEventListener("click", get_iphone);
@@ -125,11 +149,31 @@ iphone.addEventListener("click", get_iphone);
 function get_pastabox(){
     var pastaboxanimate = document.getElementsByClassName('pastabox_appear');
     pastabox.classList.add('pastabox_appear');
+    goal++;
+    check();
 }
 
 pastabox.addEventListener("click", get_pastabox);
 
+function check () {
+    if (goal==5){
+        var img_win = document.createElement('img');
+        img_win.setAttribute('id', 'win');
+        img_win.setAttribute('src', 'images/youwin.png');
+        
+        img_win.setAttribute('class', 'win-anim');
+        img_win.classList.add('win-anim');
+              
+        var destination_win = document.getElementById('house');
+        destination_win.appendChild(img_win);
+        
+        clearInterval(decrease);
+        
+        sound.volume=0;
+        sound_win = document.createElement('audio'); 
+        sound_win.setAttribute('src', 'SOUND/Applaudissement.mp3'); 
+        sound_win.setAttribute('autoplay', '')
+    } 
+}
 
-// TIMER
-
-
+    
