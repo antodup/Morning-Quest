@@ -17,11 +17,11 @@ var play = document.getElementById('play'),
     
     countdown = document.getElementById('countdown'),
     _sec = 60,
-    _min = 0,
+    _min,
+    
     sound, 
     sound_loose,
-    sound_win, 
-    ;
+    sound_win;
 
 var click = function() {  
 
@@ -44,7 +44,23 @@ var click = function() {
 
             document.getElementById("figure").style.display = "inline-block";
 
-            interval = setInterval(numbers, 1750);       
+            interval = setInterval(numbers, 1750);  
+            
+            
+            if (document.getElementById('5min').checked){
+                countdown.innerHTML = "5:00";
+                _min = 4;
+            }
+            
+            if (document.getElementById('2min').checked){
+                countdown.innerHTML = "2:00";
+                _min = 1; 
+            }
+            
+            if (document.getElementById('1min').checked){
+                countdown.innerHTML = "1:00";
+                _min = 0; 
+            }
             
         }
 }
@@ -62,7 +78,6 @@ function numbers () {
         counter.innerHTML = 'GO !'; 
         clearInterval(interval); 
 
-        countdown.innerHTML = "5:00";
         decrease = setInterval(count, 1000);
         
         sound = document.createElement('audio');
