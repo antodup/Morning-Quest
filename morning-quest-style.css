@@ -181,7 +181,66 @@ body{
 
 
 
-/* OBJECTS */
+/* OBJECTS */ 
+
+#tapis {
+    position: absolute;
+    bottom: 0px; 
+    left: 20px;
+    z-index: 32;
+}
+
+#commode  {
+    position: absolute;
+    bottom: 0px; 
+    left: 0px;
+    z-index: 32;
+}
+
+#tableaux {
+    position: absolute;
+    bottom: 200px; 
+    left: 850px;
+    width: 250px;
+}
+
+
+#ampli {
+    position: absolute;
+    bottom: 50px; 
+    left: 600px;
+    width: 150px;
+    z-index: 32;  
+}
+
+
+#lamp {
+    position: absolute;
+    bottom: 00px; 
+    left: 800px;
+    width: 180px;
+    z-index: 32; 
+}
+
+#table {
+    position: absolute;
+    bottom: 40px; 
+    left: 250px;
+    width: 100px;
+    z-index: 32; 
+}
+
+#lampe-posee {
+    position: absolute;
+    bottom: 175px; 
+    left: 260px;
+    width: 80px;
+    z-index: 32; 
+}
+
+
+
+/* OBJECTS TO FIND */
 
 
 .navigo_appear {
@@ -193,8 +252,8 @@ body{
 #navigoImg {
     width: 20px;
     position: absolute;
-    left: 140px;  
-    bottom: 50px;
+    left: 160px;  
+    bottom: 75px;
     -ms-transform: rotate(156eg); /* IE 9 */
     -webkit-transform: rotate(16deg); /* Chrome, Safari, Opera */
     transform: rotate(16deg);
@@ -204,8 +263,8 @@ body{
 #cle {
     position: absolute;
     width: 20px;
-    left: 800px;
-    bottom: 10px; 
+    left: 780px;
+    bottom: 40px; 
     z-index: 14;
 }
 
@@ -219,8 +278,8 @@ body{
 #mac {
     position: absolute;
     width: 100px;
-    left: 650px;
-    bottom: 120px; 
+    left: 660px;
+    bottom: 70px; 
     z-index: 12;
     display: inline-block;
 }
@@ -234,8 +293,8 @@ body{
 #iphone {
 	width: 30px; 
 	position: absolute;
-	top: 500px;
-	left: 830px;
+	top: 130px;
+	left: 875px;
 }
 
 .iphone_appear {
