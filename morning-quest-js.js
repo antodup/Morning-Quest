@@ -21,7 +21,10 @@ var play = document.getElementById('play'),
     
     sound, 
     sound_loose,
-    sound_win;
+    sound_win,
+    
+    lock = 0;
+
 
 var click = function() {  
 
@@ -45,6 +48,7 @@ var click = function() {
             document.getElementById("figure").style.display = "inline-block";
 
             interval = setInterval(numbers, 1750);  
+            
             
             if (document.getElementById('3min').checked){
                 countdown.innerHTML = "3:00";
@@ -72,10 +76,11 @@ function numbers () {
         go--;
         console.log(go);
     } else {
-        
+        console.log("toto");
         counter.innerHTML = 'GO !'; 
         clearInterval(interval); 
-
+        lock = 1;
+        console.log(lock);
         decrease = setInterval(count, 1000);
         
         sound = document.createElement('audio');
@@ -94,9 +99,9 @@ function numbers () {
               -- _sec;
               countdown.innerHTML = _min + ":" + _sec;
           }
-
+            
           if (_sec < 10){
-            countdown.innerHTML = _min + ":0" +_sec;
+                countdown.innerHTML = _min + ":0" +_sec;
           }
             
           if (_min == 0 && _sec == 0){
@@ -128,49 +133,60 @@ play.addEventListener('click',click) ;
 
 function get_navigo(){
     var navigoanimate = document.getElementsByClassName('navigo_appear');
-    navigo.classList.add('navigo_appear');
-    goal++;
-    check();
+    
+    if (lock == 1){
+        navigo.classList.add('navigo_appear');
+        goal++;
+        check();
+    }
 }
-
-navigo.addEventListener("click", get_navigo);
 
 function get_cle(){
     var cleanimate = document.getElementsByClassName('cle_appear');
-    cle.classList.add('cle_appear');
-    goal++;
-    check();
+    
+    if (lock == 1){
+        cle.classList.add('cle_appear');
+        goal++;
+        check();
+    }
 }
 
-cle.addEventListener("click", get_cle);
 
 function get_mac(){
     var macanimate = document.getElementsByClassName('mac_appear');
-    mac.classList.add('mac_appear');
-    goal++;
-    check();
+    
+    if (lock == 1){
+        mac.classList.add('mac_appear');
+        goal++;
+        check();
+    }
 }
-
-mac.addEventListener("click", get_mac);
 
 function get_iphone(){
     var iphoneanimate = document.getElementsByClassName('iphone_appear');
-    iphone.classList.add('iphone_appear');
-    goal++;
-    check();
+    
+    if (lock == 1){
+        iphone.classList.add('iphone_appear');
+        goal++;
+        check();
+    }
 }
-
-iphone.addEventListener("click", get_iphone);
-
 
 function get_pastabox(){
     var pastaboxanimate = document.getElementsByClassName('pastabox_appear');
-    pastabox.classList.add('pastabox_appear');
-    goal++;
-    check();
+    
+    if (lock == 1){
+        pastabox.classList.add('pastabox_appear');
+        goal++;
+        check();
+    }
 }
 
-document.addEventListener('click', get_pastabox)
+navigo.addEventListener("click", get_navigo);
+cle.addEventListener("click", get_cle);
+mac.addEventListener("click", get_mac);
+iphone.addEventListener("click", get_iphone);
+pastabox.addEventListener("click", get_pastabox);
 
 function check () {
     if (goal==5){
