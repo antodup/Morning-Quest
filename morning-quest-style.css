@@ -123,7 +123,7 @@ input.radio:empty {
 
 #start p {
     padding-top: 20px;
-    width: 400px;
+    width: 516px;
     text-align: center;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
@@ -287,6 +287,15 @@ input.radio:empty {
 }
 
 
+#radio  {
+    position: absolute;
+    bottom: 203px; 
+    left: 20px;
+    width: 80px;
+    z-index: 33;
+}
+
+
 
 /* OBJECTS TO FIND */
 
@@ -353,11 +362,13 @@ input.radio:empty {
 
 #pastabox {
 	width: 50px; 
-
 	position: absolute;
-	top: 520px; 
-	left: 250px;
+	top: 365px; 
+	left: 70px;
+    z-index: 32;
 }
+
+
 
 .pastabox_appear {
     -webkit-animation: pastaboxappear 2s 1 ease-in forwards;
