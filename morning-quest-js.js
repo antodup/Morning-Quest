@@ -95,9 +95,9 @@ function numbers () {
               -- _sec;
               countdown.innerHTML = _min + ":" + _sec;
           }
-            
+
           if (_sec < 10){
-                countdown.innerHTML = _min + ":0" +_sec;
+            countdown.innerHTML = _min + ":0" +_sec;
           }
             
           if (_min == 0 && _sec == 0){
@@ -163,6 +163,7 @@ function get_iphone(){
 
 iphone.addEventListener("click", get_iphone);
 
+
 function get_pastabox(){
     var pastaboxanimate = document.getElementsByClassName('pastabox_appear');
     pastabox.classList.add('pastabox_appear');
@@ -170,7 +171,7 @@ function get_pastabox(){
     check();
 }
 
-pastabox.addEventListener("click", get_pastabox);
+document.addEventListener('click', get_pastabox)
 
 function check () {
     if (goal==5){
@@ -192,5 +193,3 @@ function check () {
         sound_win.setAttribute('autoplay', '')
     } 
 }
-
-    
