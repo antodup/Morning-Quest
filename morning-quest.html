@@ -9,6 +9,8 @@
     
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" type="text/css" href="morning-quest-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    
     <title>Morning Quest</title>
     
 </head>
@@ -39,14 +41,19 @@
             
             <form id="choice">
                 
-                <label class="Difficult">Difficile</label>
-                <input type="radio" id="1min" name="time" value="hard">
                 
-                <label class="Difficult">Moyen</label>
-                <input type="radio" id="2min" name="time" value="soso">
+                <input type="radio" id="3min" class="radio" name="time" value="easy" checked >
+                <label class="Difficult" for="3min">Facile</label>
                 
-                <label class="Difficult">Facile</label>
-                <input type="radio" id="5min" name="time" value="easy" checked>
+                
+                
+                <input type="radio" id="2min" name="time" value="soso" class="radio">
+                <label class="Difficult" for="2min">Moyen</label>
+                
+                
+                
+                <input type="radio" id="1min" name="time" value="hard" class="radio">
+                <label class="Difficult" for="1min">Difficile</label>
                 
             </form>
 

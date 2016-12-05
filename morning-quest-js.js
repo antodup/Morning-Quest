@@ -47,9 +47,9 @@ var click = function() {
             interval = setInterval(numbers, 1750);  
             
             
-            if (document.getElementById('5min').checked){
-                countdown.innerHTML = "5:00";
-                _min = 4;
+            if (document.getElementById('3min').checked){
+                countdown.innerHTML = "3:00";
+                _min = 2;
             }
             
             if (document.getElementById('2min').checked){

@@ -1,8 +1,8 @@
 body{
-    background-color: whitesmoke;
     margin: 0 auto;   
     text-align: center;
     font-family: sans-serif;
+    background: url('images/back.jpg');
 }
 
 @font-face {
@@ -12,7 +12,41 @@ body{
 
 /*HOME*/
 
+/* RADIO BUTTONS */
 
+label {
+    width: 120px;
+    border-radius: 3px;
+    border: 2px solid #D1D3D4;
+    float: left;
+    padding: 10px;
+    margin: 0px 10px 20px 10px;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+label:hover {
+    background-color: white;
+    color: #fdb714;
+}
+
+input:checked + label {
+    background-color: #fdb714;
+    color: #292929;
+    border-color: #fdb714;
+}
+
+form{
+    margin: 0 auto;
+} 
+
+/* hide input */
+input.radio:empty {
+	display: none;
+}
 
         /* TIMER */
         
@@ -71,14 +105,14 @@ body{
 }
 
 #figure {
-    margin-top: 645px;
+    margin-top: 640px;
     display : none;
     position: relative;
 }
 
 
 #start {
-	width: 400px;
+	width: 500px;
 	height: 535px;
 	top: 50%;
 	left: 50%;
@@ -87,6 +121,14 @@ body{
     z-index: 41;
 }
 
+#start p {
+    padding-top: 20px;
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
 
 .animate  {
 	-webkit-animation : play1 1s linear forwards;
@@ -98,9 +140,11 @@ body{
 }
 
 #name {
-	width: 100%;
+	width: 250px;
 	height: 30px;
 	margin-top: 30px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 
@@ -116,7 +160,7 @@ body{
 
 #good-luck {
 	font-size: 25px; 
-	font-weight: bold;
+	font-weight: 700;
     line-height: 2;
 }
 
@@ -133,7 +177,7 @@ body{
     background: none;
 
     position: absolute;
-    margin: 30px auto;
+    margin: 60px auto;
     left: 50%;
     transform: translateX(-50%)
 }
@@ -161,9 +205,13 @@ body{
 /*COUNT*/
 
 #counter{
-    font-family: sans-serif; 
+    font-family: 'Montserrat', sans-serif; 
     font-size: 100px; 
-    color: white; 
+    color: white;
+    background-color: #fdb714;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 40px;
     
     opacity: 0;
     
@@ -172,11 +220,11 @@ body{
     transform: translateX(-50%) translateY(-50%); 
     position: absolute;
     display: block;
-   
+    z-index: 80;
 }
 
 .counter {
-    -webkit-animation : counter 6s 3s linear;
+    -webkit-animation : counter 5s 3s linear;
 }
 
 
@@ -323,7 +371,7 @@ body{
     position: absolute;
     top: 30%;
     left: 30%;  
-    z-index: 15;
+    z-index: 60;
 }
 
 .loose-anim {
@@ -338,7 +386,8 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%)translateY(-50%)
+    transform: translateX(-50%)translateY(-50%);
+    z-index: 70;
 }
 
 .win-anim{
@@ -409,17 +458,8 @@ body{
 @-webkit-keyframes counter {
 	0% {opacity: 0;
 		display: block;}
-	10%{opacity: 0.1;}
-	20%{opacity: 0.2;}
-	30%{opacity: 0.3;}
-	40%{opacity: 0.4;}
-	50%{opacity: 0.5;}
-	60%{opacity: 0.6;}
-	70%{opacity: 0.7;}
-	80%{opacity: 0.8;}
-	90%{opacity: 0.9;}
+	10%{opacity: 1;}
 	100% {
-		display: none;
         opacity: 1;}
 }
 
