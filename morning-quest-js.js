@@ -46,6 +46,8 @@ var click = function() {
             counter.classList.add('counter');
 
             document.getElementById("figure").style.display = "inline-block";
+            
+            document.getElementById("sound-on").style.display = "inline-block";
 
             interval = setInterval(numbers, 1750);  
             
@@ -207,4 +209,46 @@ function check () {
         sound_win.setAttribute('src', 'SOUND/Applaudissement.mp3'); 
         sound_win.setAttribute('autoplay', '')
     } 
+}
+
+
+// MUTE SOUND
+
+var soundtest = 1;
+
+var mute = document.getElementById('sound-on');
+
+function _muteSound () {
+    mute.setAttribute('src', 'images/sound-mute.svg');
+    
+    sound.volume=0;
+    
+    document.getElementById("sound-on").style.backgroundColor = "rgb(255, 181, 0)";
+    document.getElementById("sound-on").style.border = "2px solid #B48731";
+}
+
+mute.addEventListener('click', toggle_sound);
+
+function _activeSound(){
+    
+    console.log('totodzs');
+    mute.setAttribute('src', 'images/sound-on.svg')
+    sound.volume=1;
+    
+    document.getElementById("sound-on").style.backgroundColor = "#B48731";
+    document.getElementById("sound-on").style.border = "2px solid rgb(255, 181, 0) ";
+}
+
+
+function toggle_sound(){
+    if(soundtest==1){
+        _muteSound();
+        soundtest=0;
+        console.log(soundtest)
+    }
+    
+    else {
+        _activeSound();
+        soundtest=1;
+    }
 }
