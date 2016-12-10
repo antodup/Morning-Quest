@@ -418,16 +418,16 @@ input.radio:empty {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     
-    width: 500px;
-    height: 480px;
+    width: 100px;
+    height: 50px;
     
-    opacity: ;
+    opacity: 0;
 }
 
 .score {
-    -webkit-animation: score 1s 1 linear forwards;
-    -moz-animation: score 1s 1 linear forwards;
-    animation: score 1s 1 linear forwards;
+    -webkit-animation: score 1s 2s linear forwards;
+    -moz-animation: score 1s 2s linear forwards;
+    animation: score 1s 2s linear forwards;
     z-index: 90;
 }
 
@@ -603,5 +603,5 @@ input.radio:empty {
 
 @-webkit-keyframes score {
     from {width: 100; height: 50px; opacity: 0;}
-    to { width: 500px; height: 400px; display; opacity: 1;}
+    to { width: 500px; height: 480px; opacity: 1;}
 }

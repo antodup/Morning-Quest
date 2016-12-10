@@ -23,7 +23,8 @@ var play = document.getElementById('play'),
     sound_loose,
     sound_win,
     
-    lock = 0;
+    lock = 0,
+    popup = document.getElementById('popup');
 
 
 var click = function() {  
@@ -206,5 +207,8 @@ function check () {
         sound_win = document.createElement('audio'); 
         sound_win.setAttribute('src', 'SOUND/Applaudissement.mp3'); 
         sound_win.setAttribute('autoplay', '')
+        
+        popup.setAttribute('class', 'score');
+        popup.classList.add('score');
     } 
 }
