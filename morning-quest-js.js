@@ -24,7 +24,11 @@ var play = document.getElementById('play'),
     sound_win,
     
     lock = 0,
-    popup = document.getElementById('popup');
+    popup = document.getElementById('popup'), 
+    score_name = document.getElementById('score_name'),
+    score_count = document.getElementById('score_count'), 
+    
+    restart = document.getElementById('restart');
 
 
 var click = function() {  
@@ -209,6 +213,18 @@ function check () {
         sound_win.setAttribute('autoplay', '')
         
         popup.setAttribute('class', 'score');
-        popup.classList.add('score');
+        popup.classList.add('score'); 
+        
+        input = document.getElementById('name').value;
+        console.log(input);
+        score_name.innerHTML = input; 
+        score_count.innerHTML = _min + ":" + _sec;
+        
     } 
 }
+
+function reload () {
+    restart = window.location.reload(); 
+}
+
+restart.addEventListener("click", reload);
