@@ -17,7 +17,6 @@
 
 <body>
 
-
     <div id="house">
 
       <!--HOME-->
@@ -29,7 +28,9 @@
         </div>
 
         <img src="images/silhouette.png" id="figure">
-
+        
+        <img src="images/sound-on.svg" alt="sound" id="sound-on">
+        
         <div id="start" >
 
             <img src="images/silhouette.png" id="figure">
@@ -38,7 +39,7 @@
             <input type="text" name="name" id="name" placeholder="Ton nom" required>
               
             <p id="presentation">Après une soirée bien arrosée, ton appart est en bordel. Tu te reveilles en retard ! <br>
-            Tu as 5 minutes pour trouver toutes tes affaires et partir ! <br><span id="good-luck">Bon courage !</span> </p>
+            Tu as 3 minutes pour trouver toutes tes affaires et partir ! <br><span id="good-luck">Bon courage !</span> </p>
             
             <form id="choice">
                 
@@ -51,7 +52,7 @@
                 <input type="radio" id="2min" name="time" value="soso" class="radio">
                 <label class="Difficult" for="2min">Moyen</label>
                 
-                
+
                 
                 <input type="radio" id="1min" name="time" value="hard" class="radio">
                 <label class="Difficult" for="1min">Difficile</label>
@@ -62,6 +63,8 @@
           </div>
           
           <!--OBJECTS-->
+        
+          <img src="images/radio.png" alt="radio" id="radio">    
           
           <img src="images/tapis.png" alt="tapis" id="tapis">
           
@@ -90,6 +93,19 @@
           <button> <img src="images/cle.png" alt="cle" id="cle"></button>
 
           <button> <img src="images/mac.png" alt="mac" id="mac"></button>
+        
+          <div id="popup">
+                <div id="end">  
+                    <img src="images/Morning-quest-logo.png" id="logo">
+                    <ul id="score">  
+                        <li id="score_name"></li>
+                        <li id="score_count"></li>
+                    </ul>
+              
+                <button id="restart">RETRY</button> 
+                </div>
+          </div>
+              
           
         <div id="popup"></div>
           
